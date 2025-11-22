@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - NewlaW</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation (Same as index.html) -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">NewlaW</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="index.html#features" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="index.html#sustainability" class="nav-link">Sustainability</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-icons" id="main-nav-icons">
+                <a href="design.html" class="nav-cta">Start Designing</a>
+                <a href="cart.html" class="nav-icon" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+                <div class="profile-dropdown">
+                    <a href="#" class="nav-icon" aria-label="Profile"><i class="fas fa-user-circle"></i></a>
+                    <div class="dropdown-content" id="profile-dropdown-content">
+                        <!-- Links are initially hidden or shown by JS based on login status -->
+                        <a href="profile.html" id="dropdown-profile-link" class="hidden">Profile</a>
+                        <a href="orders.html" id="dropdown-orders-link" class="hidden">Orders</a>
+                        <a href="#" id="dropdown-login-link">Login</a>
+                        <a href="#" id="dropdown-signout-link" class="hidden">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="orders-section">
+            <div class="container">
+                <h1 class="page-title">My Orders</h1>
+
+                <!-- Order 1 -->
+                <div class="order-card">
+                    <div class="order-header">
+                        <div>
+                            <p><strong>Order ID:</strong> #UNQ-84620</p>
+                            <p><strong>Date:</strong> April 15, 2024</p>
+                        </div>
+                        <div class="order-status shipped">
+                            <i class="fas fa-check-circle"></i> Shipped
+                        </div>
+                    </div>
+                    <div class="order-body">
+                        <div class="order-item">
+                            <img src="https://images.pexels.com/photos/1852382/pexels-photo-1852382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                alt="Customized Jacket" class="order-item-img">
+                            <div class="order-item-details">
+                                <h4>AI-Generated "Cyberpunk" Denim Jacket</h4>
+                                <p>Fabric: Organic Cotton Denim</p>
+                                <p>Size: Large</p>
+                            </div>
+                            <div class="order-item-price">$125.00</div>
+                        </div>
+                    </div>
+                    <div class="order-footer">
+                        <a href="#" class="btn btn-secondary btn-small">View Details</a>
+                        <span><strong>Total: $125.00</strong></span>
+                    </div>
+                </div>
+
+                <!-- Order 2 -->
+                <div class="order-card">
+                    <div class="order-header">
+                        <div>
+                            <p><strong>Order ID:</strong> #UNQ-75913</p>
+                            <p><strong>Date:</strong> March 28, 2024</p>
+                        </div>
+                        <div class="order-status processing">
+                            <i class="fas fa-sync-alt"></i> In Production
+                        </div>
+                    </div>
+                    <div class="order-body">
+                        <div class="order-item">
+                            <img src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                alt="Customized Blazer" class="order-item-img">
+                            <div class="order-item-details">
+                                <h4>Custom-Fit "Monogram" Linen Blazer</h4>
+                                <p>Fabric: Irish Linen</p>
+                                <p>Size: Custom Tailored</p>
+                            </div>
+                            <div class="order-item-price">$210.00</div>
+                        </div>
+                        <div class="order-item">
+                            <img src="https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                alt="Customized T-shirt" class="order-item-img">
+                            <div class="order-item-details">
+                                <h4>"City Skyline" Graphic T-Shirt</h4>
+                                <p>Fabric: Bamboo Blend</p>
+                                <p>Size: Medium</p>
+                            </div>
+                            <div class="order-item-price">$45.00</div>
+                        </div>
+                    </div>
+                    <div class="order-footer">
+                        <a href="#" class="btn btn-secondary btn-small">View Details</a>
+                        <span><strong>Total: $255.00</strong></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html, simplified for brevity) -->
+    <footer class="main-footer-section">
+        <div class="footer-bottom">
+            <p>&copy; 2024 NewlaW. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

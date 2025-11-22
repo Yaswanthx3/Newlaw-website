@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - NewlaW</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">NewlaW</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="design.html" class="nav-link">Back to Design</a></li>
+            </ul>
+            <div class="nav-icons" id="main-nav-icons">
+                <a href="cart.html" class="nav-icon" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+                <div class="profile-dropdown">
+                    <a href="#" class="nav-icon" aria-label="Profile"><i class="fas fa-user-circle"></i></a>
+                    <div class="dropdown-content" id="profile-dropdown-content">
+                        <!-- Content will be dynamically loaded by JS -->
+                        <a href="profile.html" class="hidden" id="dropdown-profile-link">Profile</a>
+                        <a href="orders.html" class="hidden" id="dropdown-orders-link">Orders</a>
+                        <a href="#" id="dropdown-login-link">Login</a>
+                        <a href="#" class="hidden" id="dropdown-signout-link">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="checkout-page-container">
+        <div class="summary-section" style="max-width: 800px; margin: 4rem auto; padding: 2rem;">
+            <h2>Your Cart</h2>
+            <div id="checkout-summary" class="checkout-summary">
+                <!-- Summary from localStorage will be injected here -->
+                <p>Loading your design...</p>
+            </div>
+            <div class="checkout-total">
+                <span>Total</span>
+                <strong id="checkout-total-price">₹0</strong>
+            </div>
+            <a href="payment.html" class="btn btn-primary"
+                style="width: 100%; margin-top: 2rem; text-align: center;">Proceed to Checkout</a>
+        </div>
+    </main>
+
+    <footer class="main-footer-section">
+        <div class="footer-bottom">
+            <p>&copy; 2024 NewlaW. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // This script is specific to the cart page
+        const orderDetails = JSON.parse(localStorage.getItem('uniqueOrder'));
+        if (orderDetails) {
+            document.getElementById('checkout-summary').innerHTML = orderDetails.summary;
+            document.getElementById('checkout-total-price').textContent = orderDetails.total;
+        } else {
+            document.getElementById('checkout-summary').innerHTML = '<p>Your cart is empty. Please go back to the design page to create your product.</p>';
+        }
+    </script>
+</body>
+
+</html>

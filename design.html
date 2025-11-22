@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Studio - NewlaW</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">NewlaW</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="index.html#features" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="index.html#sustainability" class="nav-link">Sustainability</a></li>
+            </ul>
+            <div class="nav-icons" id="main-nav-icons">
+                <a href="#" id="review-order-btn" class="nav-cta">Review & Order</a>
+                <a href="cart.html" class="nav-icon" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+                <div class="profile-dropdown">
+                    <a href="#" class="nav-icon" aria-label="Profile"><i class="fas fa-user-circle"></i></a>
+                    <div class="dropdown-content" id="profile-dropdown-content">
+                        <!-- Content will be dynamically loaded by JS -->
+                        <a href="profile.html" class="hidden" id="dropdown-profile-link">Profile</a>
+                        <a href="orders.html" class="hidden" id="dropdown-orders-link">Orders</a>
+                        <a href="#" id="dropdown-login-link">Login</a>
+                        <a href="#" class="hidden" id="dropdown-signout-link">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="design-studio-container">
+        <!-- Left Panel: Tools -->
+        <aside class="design-panel tools-panel">
+            <div class="panel-header">
+                <h3><i class="fas fa-wrench"></i> Tools</h3>
+            </div>
+            <ul id="tool-list" class="tool-list">
+                <li class="tool-item active" data-tool="garment"><i class="fas fa-tshirt"></i> Garment</li>
+                <li class="tool-item" data-tool="fabric"><i class="fas fa-layer-group"></i> Fabric</li>
+                <li class="tool-item" data-tool="color"><i class="fas fa-palette"></i> Color</li>
+                <li class="tool-item" data-tool="details"><i class="fas fa-pen-ruler"></i> Details</li>
+                <li class="tool-item" data-tool="upload"><i class="fas fa-upload"></i> Upload</li>
+            </ul>
+        </aside>
+
+        <!-- Center Panel: Canvas -->
+        <section class="design-canvas">
+            <div class="canvas-header">
+                <span id="canvas-view-label">T-Shirt / 3D View</span>
+                <div id="view-toggle" class="view-toggle">
+                    <button class="active" data-view="3D">3D</button>
+                    <button data-view="2D">2D</button>
+                </div>
+            </div>
+            <div id="garment-wrapper" class="canvas-preview">
+                <!-- The garment images are now inside a wrapper for positioning the graphic -->
+                <img src="https://i.imgur.com/V3uM3o2.png" alt="3D T-shirt model preview" id="garment-preview-3d-tshirt"
+                    class="garment-model" data-garment="tshirt">
+                <img src="https://i.imgur.com/2x3Yqg8.png" alt="2D T-shirt model preview" id="garment-preview-2d-tshirt"
+                    class="garment-model hidden" data-garment="tshirt">
+                <img src="https://i.imgur.com/9W3b24T.png" alt="3D Jacket model preview" id="garment-preview-3d-jacket"
+                    class="garment-model hidden" data-garment="jacket">
+                <img src="https://i.imgur.com/r6fL3a7.png" alt="2D Jacket model preview" id="garment-preview-2d-jacket"
+                    class="garment-model hidden" data-garment="jacket">
+                <img src="https://i.imgur.com/dJk1bVv.png" alt="3D Shirt model preview" id="garment-preview-3d-shirt"
+                    class="garment-model hidden" data-garment="shirt">
+                <img src="https://i.imgur.com/xQf9gWw.png" alt="2D Shirt model preview" id="garment-preview-2d-shirt"
+                    class="garment-model hidden" data-garment="shirt">
+                <img src="https://i.imgur.com/sQp5L7g.png" alt="3D Hoodie model preview" id="garment-preview-3d-hoodie"
+                    class="garment-model hidden" data-garment="hoodie">
+                <img src="https://i.imgur.com/kEaP1sS.png" alt="2D Hoodie model preview" id="garment-preview-2d-hoodie"
+                    class="garment-model hidden" data-garment="hoodie">
+                <!-- This is where the uploaded graphic will go -->
+                <div id="uploaded-graphic-overlay" class="uploaded-graphic-overlay"></div>
+            </div>
+        </section>
+
+        <!-- Right Panel: Properties -->
+        <aside class="design-panel properties-panel">
+            <div class="panel-header">
+                <div class="panel-header-content">
+                    <h3 class="properties-title"><i class="fas fa-sliders-h"></i> Properties</h3>
+                    <div id="price-display" class="price-display">₹1299</div>
+                </div>
+            </div>
+            <div id="properties-content" class="properties-content">
+                <!-- Garment Properties -->
+                <div class="properties-section" data-tool="garment">
+                    <h4>Garment Type</h4>
+                    <div class="swatch-container selectable-group" data-property="garmentType">
+                        <div class="property-option active" data-value="tshirt" data-price="1299">T-Shirt</div>
+                        <div class="property-option" data-value="shirt" data-price="1799">Shirt</div>
+                        <div class="property-option" data-value="jacket" data-price="2499">Jacket</div>
+                        <div class="property-option" data-value="hoodie" data-price="2999">Hoodie</div>
+                    </div>
+
+                    <h4>Sleeve Length</h4>
+                    <div class="swatch-container selectable-group">
+                        <div class="property-option active">Short</div>
+                        <div class="property-option">Long</div>
+                    </div>
+                    <h4>Neckline</h4>
+                    <div class="swatch-container selectable-group">
+                        <div class="property-option active">Crew Neck</div>
+                        <div class="property-option">V-Neck</div>
+                        <div class="property-option">Hoodie</div>
+                    </div>
+                    <h4>Fit</h4>
+                    <div class="swatch-container selectable-group">
+                        <div class="property-option active">Regular</div>
+                        <div class="property-option">Slim</div>
+                        <div class="property-option">Oversized</div>
+                    </div>
+                </div>
+                <!-- Fabric Properties -->
+                <div class="properties-section hidden" data-tool="fabric">
+                    <h4>Select Fabric</h4>
+                    <div class="swatch-container selectable-group" data-property="fabric">
+                        <div class="property-option active" data-price="0">Cotton</div>
+                        <div class="property-option" data-price="200">Linen</div>
+                        <div class="property-option" data-price="-50">Polyester</div>
+                        <div class="property-option" data-price="300">Denim</div>
+                        <div class="property-option" data-price="500">Silk</div>
+                        <div class="property-option" data-price="400">Wool</div>
+                    </div>
+                </div>
+                <!-- Color Properties -->
+                <div class="properties-section hidden" data-tool="color">
+                    <h4>Select Color</h4>
+                    <div id="color-palette" class="swatch-container color-palette">
+                        <div class="color-swatch" data-color="white" style="background-color: #ffffff;"></div>
+                        <div class="color-swatch" data-color="black" style="background-color: #333333;"></div>
+                        <div class="color-swatch" data-color="red" style="background-color: #c0392b;"></div>
+                        <div class="color-swatch" data-color="blue" style="background-color: #2980b9;"></div>
+                        <div class="color-swatch" data-color="green" style="background-color: #27ae60;"></div>
+                        <div class="color-swatch" data-color="yellow" style="background-color: #f1c40f;"></div>
+                        <div class="color-swatch" data-color="orange" style="background-color: #e67e22;"></div>
+                        <div class="color-swatch" data-color="purple" style="background-color: #8e44ad;"></div>
+                        <div class="color-swatch" data-color="pink" style="background-color: #ff79c6;"></div>
+                        <div class="color-swatch" data-color="gray" style="background-color: #95a5a6;"></div>
+                        <div class="color-swatch" data-color="brown" style="background-color: #9b7653;"></div>
+                        <div class="color-swatch" data-color="teal" style="background-color: #1abc9c;"></div>
+                        <div class="color-swatch" data-color="navy" style="background-color: #34495e;"></div>
+                        <div class="color-swatch" data-color="olive" style="background-color: #808000;"></div>
+                        <div class="color-swatch" data-color="maroon" style="background-color: #800000;"></div>
+                        <div class="color-swatch" data-color="multi"
+                            style="background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);"></div>
+                    </div>
+                </div>
+                <!-- Details Properties -->
+                <div class="properties-section hidden" data-tool="details">
+                    <h4>Pockets</h4>
+                    <div class="swatch-container selectable-group" data-property="pockets">
+                        <div class="property-option active" data-price="0">None</div>
+                        <div class="property-option" data-price="150">Chest Pocket</div>
+                        <div class="property-option" data-price="250">Kangaroo Pouch</div>
+                    </div>
+                    <h4>Special Instructions</h4>
+                    <textarea id="special-instructions" class="special-instructions-input"
+                        placeholder="e.g., 'Add a small embroidered star on the left sleeve.'"></textarea>
+                </div>
+                <!-- Upload Properties -->
+                <div class="properties-section hidden" data-tool="upload">
+                    <h4>Upload Graphic</h4>
+                    <!-- This label triggers the hidden file input -->
+                    <label for="graphic-upload" class="btn btn-secondary"
+                        style="width: 100%; text-align: center; box-sizing: border-box;">Choose File</label>
+                    <input type="file" id="graphic-upload" accept="image/png, image/jpeg" style="display: none;">
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Order Summary Modal -->
+    <div id="order-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-modal-btn">&times;</button>
+            <h2>Your Custom Design</h2>
+            <div id="modal-summary" class="modal-summary">
+                <!-- Summary will be injected here by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <div class="modal-total-price">
+                    <span>Total:</span>
+                    <strong id="modal-total-price"></strong>
+                </div>
+                <button id="checkout-btn" class="btn btn-primary">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NewlaW</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">NewlaW</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="checkout-page-container">
+        <div class="payment-section" style="max-width: 500px; margin: 4rem auto;">
+            <h2>Login to Your Account</h2>
+            <div class="payment-method-form">
+                <label class="form-label">Email Address</label>
+                <input type="email" id="login-email" placeholder="you@example.com" class="form-input">
+
+                <label class="form-label">Password</label>
+                <input type="password" id="login-password" placeholder="••••••••" class="form-input">
+
+                <button id="login-btn" class="btn btn-primary"
+                    style="width: 100%; text-align: center; margin-top: 1rem;">Login</button>
+
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem;">
+                    Don't have an account? <a href="signup.html" style="text-decoration: underline;">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer-section">
+        <div class="footer-bottom">
+            <p>&copy; 2024 NewlaW. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Redirect if already logged in
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                window.location.href = 'profile.html';
+                return;
+            }
+
+            const loginBtn = document.getElementById('login-btn');
+            loginBtn.addEventListener('click', function () {
+                // Simulate login. In a real app, you'd verify credentials.
+                localStorage.setItem('isLoggedIn', 'true');
+                // Redirect to the homepage after login
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+
+</html>

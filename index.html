@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewlaW - Design Your Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">NewlaW</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#sustainability" class="nav-link">Sustainability</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-icons" id="main-nav-icons">
+                <a href="design.html" class="nav-cta">Start Designing</a>
+                <a href="cart.html" class="nav-icon" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+                <div class="profile-dropdown">
+                    <a href="#" class="nav-icon" aria-label="Profile"><i class="fas fa-user-circle"></i></a>
+                    <div class="dropdown-content" id="profile-dropdown-content">
+                        <!-- Links are initially hidden or shown by JS based on login status -->
+                        <a href="profile.html" id="dropdown-profile-link" class="hidden">Profile</a>
+                        <a href="orders.html" id="dropdown-orders-link" class="hidden">Orders</a>
+                        <a href="#" id="dropdown-login-link">Login</a>
+                        <a href="#" id="dropdown-signout-link" class="hidden">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content scroll-animate visible">
+                <h1 class="hero-tagline">Design Your Style. Wear Your Imagination.</h1>
+                <p class="hero-description">Unique is a revolutionary platform that turns your fashion ideas into
+                    reality. From AI-powered design tools to real-world production, create clothing that is truly yours.
+                </p>
+                <div class="hero-buttons">
+                    <a href="design.html" class="btn btn-primary">Start Designing</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section scroll-animate">
+            <div class="container">
+                <h2>A New Era of Fashion Design</h2>
+                <p class="section-intro">Unique empowers you with cutting-edge tools to design, visualize, and produce
+                    custom apparel. We are a platform built for creators, by creators.</p>
+                <div class="about-icons">
+                    <div class="icon-item">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI-Powered Design</h3>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-cube"></i>
+                        <h3>3D Avatars</h3>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Fabric Selection</h3>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-cut"></i>
+                        <h3>Tailor Integration</h3>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Sustainability</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section scroll-animate">
+            <div class="container">
+                <h2>Core Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>AI Photo-to-Design</h3>
+                        <p>Upload any image and our AI will generate a unique clothing design inspired by it.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>3D Avatar Fit Preview</h3>
+                        <p>See how your creations will look and fit on a realistic 3D model of yourself before
+                            production.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Drag & Drop Customization</h3>
+                        <p>Easily modify garments, change fabrics, and add details with an intuitive interface.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Real-World Production</h3>
+                        <p>Connect with skilled tailors who will bring your digital design to life with precision.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Community & Sharing</h3>
+                        <p>Share your designs, get feedback, and discover inspiration from a global community of
+                            creators.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Eco-Conscious Fabrics</h3>
+                        <p>Choose from a curated library of sustainable and ethically sourced materials for your
+                            designs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works-section scroll-animate">
+            <div class="container">
+                <h2>From Idea to Outfit in 4 Steps</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <h3>Inspire & Design</h3>
+                        <p>Use our AI tools or start from scratch to create your unique garment.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <h3>Visualize & Refine</h3>
+                        <p>Preview your design on a 3D avatar and make perfect adjustments.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <h3>Select & Produce</h3>
+                        <p>Choose your fabrics and send your design to a professional tailor.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">04</div>
+                        <h3>Wear & Share</h3>
+                        <p>Receive your custom-made outfit and share your style with the world.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Audience Section -->
+        <section class="target-audience-section scroll-animate">
+            <div class="overlay-text">
+                <h2>For creators, dreamers, and everyone in between.</h2>
+            </div>
+        </section>
+
+        <!-- Prototype/Demo Section -->
+        <section class="prototype-section scroll-animate">
+            <div class="container">
+                <h2>See The App in Action</h2>
+                <p class="section-intro">Explore the intuitive interface and powerful features of the Unique app. Your
+                    next design is just a tap away.</p>
+                <div class="app-mockup">
+                    <!-- Replace with your actual app mockup image or video -->
+                    <img src="https://images.pexels.com/photos/845457/pexels-photo-845457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Unique App Mockup" />
+                </div>
+                <a href="design.html" class="btn btn-primary">Try The Prototype</a>
+            </div>
+        </section>
+
+        <!-- Final CTA Banner -->
+        <section class="final-cta scroll-animate">
+            <div class="container">
+                <h2>Turn Your Fashion Dreams Into Reality.</h2>
+                <div class="hero-buttons">
+                    <a href="design.html" class="btn btn-primary">Start Designing</a>
+                    <a href="#features" class="btn btn-secondary">See Features</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="main-footer-section">
+        <div class="container footer-content">
+            <div class="footer-about">
+                <h3>NewlaW</h3>
+                <p>Redefining personal style through technology and creativity.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#sustainability">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NewlaW. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

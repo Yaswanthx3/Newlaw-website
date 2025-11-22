@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - NewlaW</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation (Same as index.html) -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">NewlaW</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="index.html#features" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="index.html#sustainability" class="nav-link">Sustainability</a></li>
+                <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-icons" id="main-nav-icons">
+                <a href="design.html" class="nav-cta">Start Designing</a>
+                <a href="cart.html" class="nav-icon" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+                <div class="profile-dropdown">
+                    <a href="#" class="nav-icon" aria-label="Profile"><i class="fas fa-user-circle"></i></a>
+                    <div class="dropdown-content" id="profile-dropdown-content">
+                        <!-- Links are initially hidden or shown by JS based on login status -->
+                        <a href="profile.html" id="dropdown-profile-link" class="hidden">Profile</a>
+                        <a href="orders.html" id="dropdown-orders-link" class="hidden">Orders</a>
+                        <a href="#" id="dropdown-login-link">Login</a>
+                        <a href="#" id="dropdown-signout-link" class="hidden">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <section class="profile-section">
+            <div class="container">
+                <h1 class="page-title">My Profile</h1>
+                <div class="profile-grid">
+                    <!-- Profile Details Card -->
+                    <div class="profile-card">
+                        <h3 class="profile-card-title"><i class="fas fa-user-edit"></i> Personal Information</h3>
+                        <div class="profile-info">
+                            <p><strong>Name:</strong> Yaswanth Gurrala</p>
+                            <p><strong>Email:</strong> yaswanth.g@example.com</p>
+                            <p><strong>Member Since:</strong> Jan 2024</p>
+                        </div>
+                        <button class="btn btn-secondary btn-small">Edit Information</button>
+                    </div>
+
+                    <!-- Shipping Address Card -->
+                    <div class="profile-card">
+                        <h3 class="profile-card-title"><i class="fas fa-truck"></i> Shipping Address</h3>
+                        <div class="profile-info">
+                            <p><strong>Yaswanth Gurrala</strong></p>
+                            <p>123 Design Lane</p>
+                            <p>Fashion City, FS 54321</p>
+                            <p>United States</p>
+                        </div>
+                        <button class="btn btn-secondary btn-small">Manage Addresses</button>
+                    </div>
+
+                    <!-- Payment Methods Card -->
+                    <div class="profile-card">
+                        <h3 class="profile-card-title"><i class="fas fa-credit-card"></i> Payment Methods</h3>
+                        <div class="profile-info">
+                            <p><i class="fab fa-cc-visa"></i> Visa ending in 4242</p>
+                            <p>Expires 12/2026</p>
+                        </div>
+                        <button class="btn btn-secondary btn-small">Manage Payments</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer id="contact" class="main-footer-section">
+        <div class="container footer-content">
+            <div class="footer-about">
+                <h3>NewlaW</h3>
+                <p>Redefining personal style through technology and creativity.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#sustainability">Sustainability</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NewlaW. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

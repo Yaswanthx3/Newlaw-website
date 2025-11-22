@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - NewlaW</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">NewlaW</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="checkout-page-container">
+        <div class="payment-section" style="max-width: 500px; margin: 4rem auto;">
+            <h2>Create Your Account</h2>
+            <div class="payment-method-form">
+                <label class="form-label">Full Name</label>
+                <input type="text" id="signup-name" placeholder="Yaswanth" class="form-input">
+
+                <label class="form-label">Email Address</label>
+                <input type="email" id="signup-email" placeholder="you@example.com" class="form-input">
+
+                <label class="form-label">Password</label>
+                <input type="password" id="signup-password" placeholder="••••••••" class="form-input">
+
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Shipping Address</h3>
+                <input type="text" id="shipping-address1" placeholder="Address Line 1" class="form-input" required>
+                <input type="text" id="shipping-address2" placeholder="Address Line 2 (Optional)" class="form-input">
+                <div class="form-row">
+                    <input type="text" id="shipping-city" placeholder="City" class="form-input" required>
+                    <input type="text" id="shipping-pincode" placeholder="Pincode" class="form-input" required>
+                </div>
+                <input type="tel" id="shipping-phone" placeholder="Phone Number" class="form-input" required>
+
+                <button id="create-account-btn" class="btn btn-primary"
+                    style="width: 100%; text-align: center; margin-top: 1rem;">Create Account</button>
+
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem;">
+                    Already have an account? <a href="login.html" style="text-decoration: underline;">Login</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer-section">
+        <div class="footer-bottom">
+            <p>&copy; 2024 NewlaW. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Redirect if already logged in
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                window.location.href = 'profile.html';
+                return;
+            }
+
+            const createAccountBtn = document.getElementById('create-account-btn');
+            createAccountBtn.addEventListener('click', function () {
+                // In a real app, you would add validation here
+                const userProfile = {
+                    name: document.getElementById('signup-name').value,
+                    email: document.getElementById('signup-email').value,
+                    address: {
+                        // Use the signup name for the shipping name by default
+                        name: document.getElementById('signup-name').value,
+                        address1: document.getElementById('shipping-address1').value,
+                        address2: document.getElementById('shipping-address2').value,
+                        city: document.getElementById('shipping-city').value,
+                        pincode: document.getElementById('shipping-pincode').value,
+                        phone: document.getElementById('shipping-phone').value,
+                    }
+                };
+
+                // Save profile and set login state
+                localStorage.setItem('userProfile', JSON.stringify(userProfile));
+                localStorage.setItem('isLoggedIn', 'true');
+
+                // Redirect to profile page
+                window.location.href = 'profile.html';
+            });
+        });
+    </script>
+</body>
+
+</html>
